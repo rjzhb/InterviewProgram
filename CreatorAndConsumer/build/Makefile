@@ -111,7 +111,7 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named untitled5
+# Target rules for targets named CreatorAndConsumer
 
 # Build rule for target.
 untitled5: cmake_check_build_system

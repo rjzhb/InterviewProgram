@@ -1,3 +1,0 @@
-/home/rjzhb/Project/interview/untitled5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/rjzhb/Project/interview/untitled5/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/rjzhb/Project/interview/untitled5/cmake-build-debug/CMakeFiles/untitled5.dir
