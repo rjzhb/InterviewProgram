@@ -9,8 +9,6 @@
 /home/rjzhb/Project/interview/DeadLock/main.cpp
 iostream
 -
-semaphore.h
--
 mutex
 -
 unistd.h
