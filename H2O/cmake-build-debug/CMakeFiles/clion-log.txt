@@ -1,0 +1,8 @@
+C:\Windows\system32\wsl.exe --distribution Ubuntu --exec /usr/bin/zsh -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/rjzhb/Project/interview/H2O/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/rjzhb/Project/interview/H2O -B /home/rjzhb/Project/interview/H2O/cmake-build-debug"
+CMake Error at CMakeLists.txt:7 (target_link_libraries):
+  Cannot specify link libraries for target "H20" which is not built by this
+  project.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/rjzhb/Project/interview/H2O/cmake-build-debug/CMakeFiles/CMakeOutput.log".

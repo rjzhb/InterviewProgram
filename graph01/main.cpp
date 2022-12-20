@@ -21,18 +21,21 @@ void dfs(vector<vector<int>> graph, vector<int> node_list) {
 
 void bfs(vector<vector<int>> graph) {
     queue<int> q;
-    q.push(0);
-    cout << 0 << endl;
-    visited[0] = true;
-    while (!q.empty()) {
-        int temp = q.front();
-        q.pop();
+    for (int i = 0; i < graph.size(); i++) {
+        q.push(i);
+        if (visited[i]) continue;
+        cout << i << endl;
+        visited[i] = true;
+        while (!q.empty()) {
+            int temp = q.front();
+            q.pop();
 
-        for (auto it: graph[temp]) {
-            if (visited[it]) continue;
-            q.push(it);
-            cout << it << endl;
-            visited[it] = true;
+            for (auto it: graph[temp]) {
+                if (visited[it]) continue;
+                q.push(it);
+                cout << it << endl;
+                visited[it] = true;
+            }
         }
     }
 }
@@ -45,9 +48,7 @@ int main() {
     graph.push_back({2, 5});
     graph.push_back({3, 5});
 
-
-    cout << "深度优先遍历" << endl;
-    dfs(graph, graph[0]);
+    bfs(graph);
 
     return 0;
 }

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/H2O.dir/main.cpp.o  -o H2O  -lpthread 
