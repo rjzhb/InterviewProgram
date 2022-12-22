@@ -7,40 +7,27 @@ std::unordered_map<char, std::vector<char>> graph;
 
 
 void create_graph() {
-    graph['A'] = {'D'};
-    graph['B'] = {'A', 'C'};
+    graph['A'] = {'B', 'D'};
+    graph['B'] = {'C'};
     graph['C'] = {'A'};
 }
 
-std::unordered_map<char, std::vector<char>> create_pregraph() {
+std::unordered_map<char, int> create_indegree() {
+    std::unordered_map<char, int> indegree_map;
     std::vector<bool> visited(graph.size(), false);
-    std::unordered_map<char, std::vector<char>> res;
 
     for (auto it = graph.begin(); it != graph.end(); it++) {
-        res[it->first].emplace_back(NULL);
-        if (visited[it->first]) {
-            continue;
+        if (indegree_map.find(it->first) == indegree_map.end()) {
+            indegree_map[it->first] = 0;
         }
-        std::queue<char> q;
-        q.push(it->first);
-        visited[it->first] = true;
-        while (!q.empty()) {
-            char node = q.front();
-            q.pop();
 
-            for (auto item: graph[node]) {
-                res[item].push_back(node);
-                if (visited[item]) {
-                    continue;
-                }
-
-                q.push(item);
-                visited[item] = true;
-            }
+        for (auto item: it->second) {
+            indegree_map[item]++;
         }
     }
-    return res;
+    return indegree_map;
 }
+
 
 void BFS(std::vector<bool> &visited) {
     for (auto it = graph.begin(); it != graph.end(); it++) {
@@ -93,24 +80,30 @@ void DFS(std::vector<bool> &visited) {
     }
 }
 
+//判断图是否有环，有环返回false，无环返回true
+bool judge(std::unordered_map<char, int> indegree_map) {
+    int cnt = graph.size();
+    std::queue<char> q;
 
-bool judge(std::unordered_map<char, std::vector<char>> graph_2) {
-    std::unordered_map<char, std::vector<char>> graph_1 = graph;
-    for (auto it = graph_2.begin(); it != graph_2.end(); it++) {
-        //找到入度为0的节点
-        if (it->second.size() == 1) {
-            //擦除该节点以及他的出度
-            graph_1.erase(it->first);
-            for (auto it2 = graph_2.begin(); it2 != graph_2.end(); it2++) {
-                if (graph_2[it2->first].) {
-
-                }
+    for (auto it: indegree_map) {
+        if (it.second == 0) {
+            q.push(it.first);
+        }
+    }
+    while (!q.empty()) {
+        char node = q.front();
+        q.pop();
+        cnt--;
+        for (auto it: graph[node]) {
+            if (--indegree_map[it] == 0) {
+                q.push(it);
             }
         }
     }
 
-    return graph_1.size();
+    return cnt == 0;
 }
+
 
 int main() {
     create_graph();
@@ -120,8 +113,8 @@ int main() {
     std::vector<bool> visited_2(graph.size(), false);
     DFS(visited_2);
 
-    std::unordered_map<char, std::vector<char>> res = create_pregraph();
+    std::unordered_map<char, int> indegree_map = create_indegree();
 
-    std::cout << judge(res) << std::endl;
+    std::cout << judge(indegree_map) << std::endl;
     return 0;
 }
