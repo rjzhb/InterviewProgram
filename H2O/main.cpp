@@ -10,12 +10,15 @@ std::condition_variable cv;
 void print_H() {
     for (int i = 0; i < 2; i++) {
         std::unique_lock<std::mutex> lock(mu);
+
         while (cnt_h == 2) {
             cv.wait(lock);
         }
+
         std::cout << "H";
         cnt_h++;
-        if (cnt_h == 2)cv.notify_all();
+
+        if (cnt_h == 2) { cv.notify_all(); }
     }
 }
 
