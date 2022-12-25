@@ -31,7 +31,7 @@ find_by_dijkstra(std::unordered_map<char, std::unordered_map<char, int>> graph, 
             continue;
         }
         node_map[it.first] = source_node;
-        //-1代表无穷远点
+        //INFINITE代表无穷远点
         if (graph[res.back().first][it.first] == INFINITE) {
             dist.insert({it.first, INFINITE});
         } else {
