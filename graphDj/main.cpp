@@ -46,11 +46,12 @@ find_by_dijkstra(std::unordered_map<char, std::unordered_map<char, int>> graph, 
         //以临时节点为基础更新整个dist
         for (auto it: dist) {
             if (graph[res.back().first][it.first] != INFINITE) {
-                dist.erase(it);
                 //更新前驱节点
                 if (graph[res.back().first][it.first] + res.back().second <= it.second) {
                     node_map[it.first] = res.back().first;
                 }
+
+                dist.erase(it);
                 dist.insert({it.first, std::min(graph[res.back().first][it.first] + res.back().second, it.second)});
             }
         }
