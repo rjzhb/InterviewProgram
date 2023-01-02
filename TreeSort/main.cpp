@@ -17,6 +17,7 @@ void heapify(int n, std::vector<int> &example, int pos) {
     if (right < n && example[right] > example[largest]) largest = right;
     if (largest != pos) {
         std::swap(example[largest], example[pos]);
+        heapify(n, example, largest);
     }
     print(example);
 }
