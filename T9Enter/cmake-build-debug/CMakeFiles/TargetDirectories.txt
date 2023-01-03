@@ -1,0 +1,3 @@
+/home/rjzhb/Project/interview/T9Enter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rjzhb/Project/interview/T9Enter/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/rjzhb/Project/interview/T9Enter/cmake-build-debug/CMakeFiles/T9Enter.dir

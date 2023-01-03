@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rjzhb/Project/interview/T9Enter/Trie.h
+string
+-
+
+/home/rjzhb/Project/interview/T9Enter/main.cpp
+iostream
+-
+vector
+-
+string
+-
+unordered_map
+-
+Trie.h
+/home/rjzhb/Project/interview/T9Enter/Trie.h
+
