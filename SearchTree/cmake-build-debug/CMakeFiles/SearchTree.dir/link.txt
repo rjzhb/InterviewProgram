@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SearchTree.dir/main.cpp.o CMakeFiles/SearchTree.dir/DictionaryTree.cpp.o  -o SearchTree 
