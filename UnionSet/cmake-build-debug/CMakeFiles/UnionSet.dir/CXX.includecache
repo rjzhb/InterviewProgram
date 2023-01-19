@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rjzhb/Project/interview/UnionSet/UnionSet.cpp
+UnionSet.h
+/home/rjzhb/Project/interview/UnionSet/UnionSet.h
+
+/home/rjzhb/Project/interview/UnionSet/UnionSet.h
+
