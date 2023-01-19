@@ -16,7 +16,9 @@ struct node_compare {
 };
 
 std::pair<std::vector<std::pair<char, int>>, std::unordered_map<char, char>>
-find_by_dijkstra(std::unordered_map<char, std::unordered_map<char, int>> graph, char source_node) {
+find_by_dijkstra(
+        std::unordered_map<char, std::unordered_map<char, int>> graph, char source_node
+) {
     std::set<std::pair<char, int>, node_compare> dist;
     std::vector<std::pair<char, int>> res;
 
