@@ -1,0 +1,3 @@
+/home/rjzhb/Project/interview/Asynchronously/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/rjzhb/Project/interview/Asynchronously/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/rjzhb/Project/interview/Asynchronously/cmake-build-debug/CMakeFiles/Asynchronously.dir
