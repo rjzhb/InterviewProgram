@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/LeftValueAndRightValue.dir/main.cpp.o  -o LeftValueAndRightValue 
