@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include <iomanip>
 
 //只能传左值
 void func1(int &) {}
@@ -27,6 +28,9 @@ int main() {
     int val = 0;
     auto p1 = factory<int>(5);
     auto p2 = factory<int>(val);
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << std::left << std::setw(3) << "id" << std::left << std::setw(3) << "name" << std::endl;
+    std::cout << std::left << std::setw(3) << 1 << std::left << std::setw(3) << "jiosa" << std::endl;
+    std::cout << std::setw(3) << "id" << std::setw(3) << "name" << std::endl;
+    std::cout << std::setw(3) << 1 << std::setw(3) << "jiosa" << std::endl;
     return 0;
 }
