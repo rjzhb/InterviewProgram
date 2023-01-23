@@ -17,6 +17,12 @@ std::shared_ptr<T> factory(Arg &&arg) {
     return std::shared_ptr<T>(new T(std::forward<T>(arg)));
 }
 
+//非完美转发
+template<typename T, typename Arg>
+std::shared_ptr<T> factory1(Arg &&arg) {
+    return std::shared_ptr<T>(new T(arg));
+}
+
 int main() {
     int val = 0;
     auto p1 = factory<int>(5);
