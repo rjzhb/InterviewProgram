@@ -19,6 +19,7 @@ int main() {
     std::promise<int> result_promise;
     std::future<int> result_future = result_promise.get_future();
 
+    //线程传参，用于传递信息
     std::thread t1{func, std::move(result_promise)};
     std::thread t2{receive,std::move(result_future), std::ref(val)};
 
